@@ -1,6 +1,0 @@
-framework module Pods_YoYo_Cinema {
-  umbrella header "Pods-YoYo_Cinema-umbrella.h"
-
-  export *
-  module * { export * }
-}
