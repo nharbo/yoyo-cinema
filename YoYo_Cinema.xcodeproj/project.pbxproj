@@ -1,0 +1,805 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A8E066B720AB305F002F0965 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066B620AB305F002F0965 /* AppDelegate.swift */; };
+		A8E066B920AB305F002F0965 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066B820AB305F002F0965 /* LaunchVC.swift */; };
+		A8E066BC20AB305F002F0965 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8E066BA20AB305F002F0965 /* Main.storyboard */; };
+		A8E066BF20AB305F002F0965 /* YoYo_Cinema.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A8E066BD20AB305F002F0965 /* YoYo_Cinema.xcdatamodeld */; };
+		A8E066C120AB305F002F0965 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8E066C020AB305F002F0965 /* Assets.xcassets */; };
+		A8E066C420AB305F002F0965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8E066C220AB305F002F0965 /* LaunchScreen.storyboard */; };
+		A8E066CF20AB3060002F0965 /* YoYo_CinemaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066CE20AB3060002F0965 /* YoYo_CinemaTests.swift */; };
+		A8E066DA20AB3060002F0965 /* YoYo_CinemaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066D920AB3060002F0965 /* YoYo_CinemaUITests.swift */; };
+		A8E066F220AB36BC002F0965 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066F120AB36BC002F0965 /* SearchVC.swift */; };
+		A8E066F520AB3AFD002F0965 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066F420AB3AFD002F0965 /* MenuTableViewController.swift */; };
+		A8E066F720AB3CB6002F0965 /* MenuSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066F620AB3CB6002F0965 /* MenuSearchTableViewCell.swift */; };
+		A8E066F920AB3CE9002F0965 /* MenuFavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066F820AB3CE9002F0965 /* MenuFavouritesTableViewCell.swift */; };
+		A8E066FD20AB45B6002F0965 /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066FC20AB45B6002F0965 /* FavouritesVC.swift */; };
+		A8E0670120AB4C00002F0965 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670020AB4C00002F0965 /* MovieTableViewCell.swift */; };
+		A8E0670320AB5633002F0965 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670220AB5633002F0965 /* Movie.swift */; };
+		A8E0670520AB5717002F0965 /* SpinnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670420AB5717002F0965 /* SpinnerTableViewCell.swift */; };
+		A8E0670720AB5832002F0965 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670620AB5832002F0965 /* SearchController.swift */; };
+		A8E0670920AB58B1002F0965 /* MovieAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670820AB58B1002F0965 /* MovieAPIManager.swift */; };
+		FF96279ED193D0AF38355173 /* Pods_YoYo_Cinema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4CB683390DFB43EA5290B6 /* Pods_YoYo_Cinema.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A8E066CB20AB3060002F0965 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8E066AB20AB305F002F0965 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8E066B220AB305F002F0965;
+			remoteInfo = YoYo_Cinema;
+		};
+		A8E066D620AB3060002F0965 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8E066AB20AB305F002F0965 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8E066B220AB305F002F0965;
+			remoteInfo = YoYo_Cinema;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37A2115103B5E81325C3DBF3 /* Pods-YoYo_Cinema.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYo_Cinema.release.xcconfig"; path = "Pods/Target Support Files/Pods-YoYo_Cinema/Pods-YoYo_Cinema.release.xcconfig"; sourceTree = "<group>"; };
+		3C4CB683390DFB43EA5290B6 /* Pods_YoYo_Cinema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoYo_Cinema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		771108844FC7D71018A671FF /* Pods_YoYo_CinemaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoYo_CinemaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8E066B320AB305F002F0965 /* YoYo_Cinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoYo_Cinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8E066B620AB305F002F0965 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A8E066B820AB305F002F0965 /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
+		A8E066BB20AB305F002F0965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A8E066BE20AB305F002F0965 /* YoYo_Cinema.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YoYo_Cinema.xcdatamodel; sourceTree = "<group>"; };
+		A8E066C020AB305F002F0965 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A8E066C320AB305F002F0965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A8E066C520AB305F002F0965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8E066CA20AB3060002F0965 /* YoYo_CinemaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoYo_CinemaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8E066CE20AB3060002F0965 /* YoYo_CinemaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoYo_CinemaTests.swift; sourceTree = "<group>"; };
+		A8E066D020AB3060002F0965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8E066D520AB3060002F0965 /* YoYo_CinemaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoYo_CinemaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8E066D920AB3060002F0965 /* YoYo_CinemaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoYo_CinemaUITests.swift; sourceTree = "<group>"; };
+		A8E066DB20AB3060002F0965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8E066F120AB36BC002F0965 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		A8E066F420AB3AFD002F0965 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		A8E066F620AB3CB6002F0965 /* MenuSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSearchTableViewCell.swift; sourceTree = "<group>"; };
+		A8E066F820AB3CE9002F0965 /* MenuFavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFavouritesTableViewCell.swift; sourceTree = "<group>"; };
+		A8E066FC20AB45B6002F0965 /* FavouritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
+		A8E0670020AB4C00002F0965 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		A8E0670220AB5633002F0965 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A8E0670420AB5717002F0965 /* SpinnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerTableViewCell.swift; sourceTree = "<group>"; };
+		A8E0670620AB5832002F0965 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		A8E0670820AB58B1002F0965 /* MovieAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIManager.swift; sourceTree = "<group>"; };
+		CE62813B9D8C5737EB4F492F /* Pods_YoYo_CinemaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoYo_CinemaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1431E9F0067FD1F3EB4DA97 /* Pods-YoYo_Cinema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYo_Cinema.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YoYo_Cinema/Pods-YoYo_Cinema.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A8E066B020AB305F002F0965 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF96279ED193D0AF38355173 /* Pods_YoYo_Cinema.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8E066C720AB3060002F0965 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8E066D220AB3060002F0965 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E11EB0A721127174BD4727A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C4CB683390DFB43EA5290B6 /* Pods_YoYo_Cinema.framework */,
+				CE62813B9D8C5737EB4F492F /* Pods_YoYo_CinemaTests.framework */,
+				771108844FC7D71018A671FF /* Pods_YoYo_CinemaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		92880FDFE141E0354B4634DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1431E9F0067FD1F3EB4DA97 /* Pods-YoYo_Cinema.debug.xcconfig */,
+				37A2115103B5E81325C3DBF3 /* Pods-YoYo_Cinema.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A8E066AA20AB305F002F0965 = {
+			isa = PBXGroup;
+			children = (
+				A8E066B520AB305F002F0965 /* YoYo_Cinema */,
+				A8E066CD20AB3060002F0965 /* YoYo_CinemaTests */,
+				A8E066D820AB3060002F0965 /* YoYo_CinemaUITests */,
+				A8E066B420AB305F002F0965 /* Products */,
+				92880FDFE141E0354B4634DD /* Pods */,
+				1E11EB0A721127174BD4727A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A8E066B420AB305F002F0965 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066B320AB305F002F0965 /* YoYo_Cinema.app */,
+				A8E066CA20AB3060002F0965 /* YoYo_CinemaTests.xctest */,
+				A8E066D520AB3060002F0965 /* YoYo_CinemaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A8E066B520AB305F002F0965 /* YoYo_Cinema */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066F020AB30B7002F0965 /* Application */,
+				A8E066EF20AB30B0002F0965 /* Storyboards */,
+				A8E066EE20AB30A8002F0965 /* ViewControllers */,
+				A8E066ED20AB30A2002F0965 /* Models */,
+				A8E066EC20AB309B002F0965 /* Controllers */,
+				A8E066EB20AB3093002F0965 /* Managers */,
+				A8E066EA20AB308C002F0965 /* Resources */,
+				A8E066E920AB3085002F0965 /* Extensions */,
+				A8E066E820AB307F002F0965 /* Utils */,
+				A8E066E720AB3077002F0965 /* Configs */,
+			);
+			path = YoYo_Cinema;
+			sourceTree = "<group>";
+		};
+		A8E066CD20AB3060002F0965 /* YoYo_CinemaTests */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066CE20AB3060002F0965 /* YoYo_CinemaTests.swift */,
+				A8E066D020AB3060002F0965 /* Info.plist */,
+			);
+			path = YoYo_CinemaTests;
+			sourceTree = "<group>";
+		};
+		A8E066D820AB3060002F0965 /* YoYo_CinemaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066D920AB3060002F0965 /* YoYo_CinemaUITests.swift */,
+				A8E066DB20AB3060002F0965 /* Info.plist */,
+			);
+			path = YoYo_CinemaUITests;
+			sourceTree = "<group>";
+		};
+		A8E066E720AB3077002F0965 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066BD20AB305F002F0965 /* YoYo_Cinema.xcdatamodeld */,
+				A8E066C520AB305F002F0965 /* Info.plist */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		A8E066E820AB307F002F0965 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A8E066E920AB3085002F0965 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A8E066EA20AB308C002F0965 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066C020AB305F002F0965 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A8E066EB20AB3093002F0965 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A8E0670820AB58B1002F0965 /* MovieAPIManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A8E066EC20AB309B002F0965 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A8E0670620AB5832002F0965 /* SearchController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A8E066ED20AB30A2002F0965 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A8E0670220AB5633002F0965 /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A8E066EE20AB30A8002F0965 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066B820AB305F002F0965 /* LaunchVC.swift */,
+				A8E066F320AB3AF1002F0965 /* Menu */,
+				A8E066FE20AB4BDA002F0965 /* Search */,
+				A8E066FF20AB4BE6002F0965 /* Favourites */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A8E066EF20AB30B0002F0965 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066BA20AB305F002F0965 /* Main.storyboard */,
+				A8E066C220AB305F002F0965 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A8E066F020AB30B7002F0965 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066B620AB305F002F0965 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A8E066F320AB3AF1002F0965 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066F420AB3AFD002F0965 /* MenuTableViewController.swift */,
+				A8E066F620AB3CB6002F0965 /* MenuSearchTableViewCell.swift */,
+				A8E066F820AB3CE9002F0965 /* MenuFavouritesTableViewCell.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		A8E066FE20AB4BDA002F0965 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066F120AB36BC002F0965 /* SearchVC.swift */,
+				A8E0670020AB4C00002F0965 /* MovieTableViewCell.swift */,
+				A8E0670420AB5717002F0965 /* SpinnerTableViewCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A8E066FF20AB4BE6002F0965 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				A8E066FC20AB45B6002F0965 /* FavouritesVC.swift */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A8E066B220AB305F002F0965 /* YoYo_Cinema */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8E066DE20AB3060002F0965 /* Build configuration list for PBXNativeTarget "YoYo_Cinema" */;
+			buildPhases = (
+				DA22E2A229F64ABCABEC008D /* [CP] Check Pods Manifest.lock */,
+				A8E066AF20AB305F002F0965 /* Sources */,
+				A8E066B020AB305F002F0965 /* Frameworks */,
+				A8E066B120AB305F002F0965 /* Resources */,
+				9157843D0DFB4C572A8A7EB5 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YoYo_Cinema;
+			productName = YoYo_Cinema;
+			productReference = A8E066B320AB305F002F0965 /* YoYo_Cinema.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A8E066C920AB3060002F0965 /* YoYo_CinemaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8E066E120AB3060002F0965 /* Build configuration list for PBXNativeTarget "YoYo_CinemaTests" */;
+			buildPhases = (
+				A8E066C620AB3060002F0965 /* Sources */,
+				A8E066C720AB3060002F0965 /* Frameworks */,
+				A8E066C820AB3060002F0965 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8E066CC20AB3060002F0965 /* PBXTargetDependency */,
+			);
+			name = YoYo_CinemaTests;
+			productName = YoYo_CinemaTests;
+			productReference = A8E066CA20AB3060002F0965 /* YoYo_CinemaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A8E066D420AB3060002F0965 /* YoYo_CinemaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8E066E420AB3060002F0965 /* Build configuration list for PBXNativeTarget "YoYo_CinemaUITests" */;
+			buildPhases = (
+				A8E066D120AB3060002F0965 /* Sources */,
+				A8E066D220AB3060002F0965 /* Frameworks */,
+				A8E066D320AB3060002F0965 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8E066D720AB3060002F0965 /* PBXTargetDependency */,
+			);
+			name = YoYo_CinemaUITests;
+			productName = YoYo_CinemaUITests;
+			productReference = A8E066D520AB3060002F0965 /* YoYo_CinemaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A8E066AB20AB305F002F0965 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = nicoware;
+				TargetAttributes = {
+					A8E066B220AB305F002F0965 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					A8E066C920AB3060002F0965 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = A8E066B220AB305F002F0965;
+					};
+					A8E066D420AB3060002F0965 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = A8E066B220AB305F002F0965;
+					};
+				};
+			};
+			buildConfigurationList = A8E066AE20AB305F002F0965 /* Build configuration list for PBXProject "YoYo_Cinema" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A8E066AA20AB305F002F0965;
+			productRefGroup = A8E066B420AB305F002F0965 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A8E066B220AB305F002F0965 /* YoYo_Cinema */,
+				A8E066C920AB3060002F0965 /* YoYo_CinemaTests */,
+				A8E066D420AB3060002F0965 /* YoYo_CinemaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A8E066B120AB305F002F0965 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8E066C420AB305F002F0965 /* LaunchScreen.storyboard in Resources */,
+				A8E066C120AB305F002F0965 /* Assets.xcassets in Resources */,
+				A8E066BC20AB305F002F0965 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8E066C820AB3060002F0965 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8E066D320AB3060002F0965 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9157843D0DFB4C572A8A7EB5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YoYo_Cinema/Pods-YoYo_Cinema-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YoYo_Cinema/Pods-YoYo_Cinema-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA22E2A229F64ABCABEC008D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YoYo_Cinema-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A8E066AF20AB305F002F0965 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8E0670520AB5717002F0965 /* SpinnerTableViewCell.swift in Sources */,
+				A8E066F920AB3CE9002F0965 /* MenuFavouritesTableViewCell.swift in Sources */,
+				A8E066F220AB36BC002F0965 /* SearchVC.swift in Sources */,
+				A8E0670120AB4C00002F0965 /* MovieTableViewCell.swift in Sources */,
+				A8E066B920AB305F002F0965 /* LaunchVC.swift in Sources */,
+				A8E0670320AB5633002F0965 /* Movie.swift in Sources */,
+				A8E066F520AB3AFD002F0965 /* MenuTableViewController.swift in Sources */,
+				A8E0670720AB5832002F0965 /* SearchController.swift in Sources */,
+				A8E066BF20AB305F002F0965 /* YoYo_Cinema.xcdatamodeld in Sources */,
+				A8E066F720AB3CB6002F0965 /* MenuSearchTableViewCell.swift in Sources */,
+				A8E0670920AB58B1002F0965 /* MovieAPIManager.swift in Sources */,
+				A8E066B720AB305F002F0965 /* AppDelegate.swift in Sources */,
+				A8E066FD20AB45B6002F0965 /* FavouritesVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8E066C620AB3060002F0965 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8E066CF20AB3060002F0965 /* YoYo_CinemaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8E066D120AB3060002F0965 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8E066DA20AB3060002F0965 /* YoYo_CinemaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A8E066CC20AB3060002F0965 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8E066B220AB305F002F0965 /* YoYo_Cinema */;
+			targetProxy = A8E066CB20AB3060002F0965 /* PBXContainerItemProxy */;
+		};
+		A8E066D720AB3060002F0965 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8E066B220AB305F002F0965 /* YoYo_Cinema */;
+			targetProxy = A8E066D620AB3060002F0965 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A8E066BA20AB305F002F0965 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8E066BB20AB305F002F0965 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A8E066C220AB305F002F0965 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8E066C320AB305F002F0965 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A8E066DC20AB3060002F0965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A8E066DD20AB3060002F0965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A8E066DF20AB3060002F0965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1431E9F0067FD1F3EB4DA97 /* Pods-YoYo_Cinema.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L4P7ALFHXZ;
+				INFOPLIST_FILE = YoYo_Cinema/Configs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-Cinema";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A8E066E020AB3060002F0965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37A2115103B5E81325C3DBF3 /* Pods-YoYo_Cinema.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L4P7ALFHXZ;
+				INFOPLIST_FILE = YoYo_Cinema/Configs/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-Cinema";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A8E066E220AB3060002F0965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YoYo_CinemaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoYo_Cinema.app/YoYo_Cinema";
+			};
+			name = Debug;
+		};
+		A8E066E320AB3060002F0965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YoYo_CinemaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YoYo_Cinema.app/YoYo_Cinema";
+			};
+			name = Release;
+		};
+		A8E066E520AB3060002F0965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YoYo_CinemaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YoYo_Cinema;
+			};
+			name = Debug;
+		};
+		A8E066E620AB3060002F0965 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = YoYo_CinemaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = YoYo_Cinema;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A8E066AE20AB305F002F0965 /* Build configuration list for PBXProject "YoYo_Cinema" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8E066DC20AB3060002F0965 /* Debug */,
+				A8E066DD20AB3060002F0965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8E066DE20AB3060002F0965 /* Build configuration list for PBXNativeTarget "YoYo_Cinema" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8E066DF20AB3060002F0965 /* Debug */,
+				A8E066E020AB3060002F0965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8E066E120AB3060002F0965 /* Build configuration list for PBXNativeTarget "YoYo_CinemaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8E066E220AB3060002F0965 /* Debug */,
+				A8E066E320AB3060002F0965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8E066E420AB3060002F0965 /* Build configuration list for PBXNativeTarget "YoYo_CinemaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8E066E520AB3060002F0965 /* Debug */,
+				A8E066E620AB3060002F0965 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A8E066BD20AB305F002F0965 /* YoYo_Cinema.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A8E066BE20AB305F002F0965 /* YoYo_Cinema.xcdatamodel */,
+			);
+			currentVersion = A8E066BE20AB305F002F0965 /* YoYo_Cinema.xcdatamodel */;
+			path = YoYo_Cinema.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A8E066AB20AB305F002F0965 /* Project object */;
+}
