@@ -14,4 +14,11 @@ class Movie: NSObject {
     var title: String?
     var poster_path: String?
     var overview: String?
+    var genres: [Genre]?
+    var release_date: String?
+    var runtime: Int?
+    var tagline: String?
+    
 }
+
+

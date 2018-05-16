@@ -11,7 +11,7 @@ import Foundation
 class SearchController {
     
     //MARK: - Constants
-    let movieApiManager = MovieAPIManager.sharedInstance
+    let api = SearchMoviesIntegration.sharedInstance
     
     //MARK: - Structs
     struct CallStatus {
@@ -21,7 +21,7 @@ class SearchController {
     }
     
     func getMoviesFromSearch(query: String, callback: @escaping (CallStatus) -> Void){
-        movieApiManager.getMoviesFromSearch(query: query) { (response) in
+        api.getMoviesFromSearch(query: query) { (response) in
             let response = CallStatus(success: response.success, movies: response.movies, error: response.error)
             callback(response)
         }

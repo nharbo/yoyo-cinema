@@ -9,14 +9,14 @@
 import Foundation
 import Alamofire
 
-class MovieAPIManager {
+class SearchMoviesIntegration {
     
     //Make class a singleton - we only need 1 instance
-    static let sharedInstance = MovieAPIManager()
+    static let sharedInstance = SearchMoviesIntegration()
     private init() { }
     
     //MARK: - Constants
-    let baseUrl = "https://api.themoviedb.org/3/search/movie?api_key="
+    let dict = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "theMovieDB", ofType: "plist")!)
     
     //MARK: - Structs
     struct CallStatus {
@@ -45,21 +45,21 @@ class MovieAPIManager {
     //Get movies from keywords. Atm. it only gets the first page (20 elements)
     func getMoviesFromSearch(query: String, callback: @escaping (CallStatus) -> Void){
         
-        var queryUrlFriendly = query.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
+        let queryUrlFriendly = query.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
         
-        var urlString = getUrlWithKey() + "&query=\(queryUrlFriendly!)"
-        
-        print(urlString)
+        let urlString = Constants.BASE_API_URL + "search/movie?api_key=" + self.getApiKey() + "&query=\(queryUrlFriendly!)"
 
         Alamofire.request(urlString, method: .get)
             .responseJSON { response in
                 
+                //Check if there's data
                 guard let data = response.data as? Data else {
                     let response = CallStatus(success: false, movies: nil, error: "Error: No data to decode")
                     callback(response)
                     return
                 }
                 
+                //Check if data decodes
                 guard let general = try? JSONDecoder().decode(JsonObj.self, from: data) else {
                     let response = CallStatus(success: false, movies: nil, error: "Error: Couldn't decode data into Movies")
                     callback(response)
@@ -71,10 +71,10 @@ class MovieAPIManager {
                 for singleMovie in general.results {
                     let movie = Movie()
 
-                    if let id = singleMovie.id as? Int { movie.id = id}
-                    if let title = singleMovie.title as? String { movie.title = title}
-                    if let poster_path = singleMovie.poster_path as? String { movie.poster_path = "https://image.tmdb.org/t/p/w500\(poster_path)"}
-                    if let overview = singleMovie.overview as? String { movie.overview = overview}
+                    if let id = singleMovie.id { movie.id = id}
+                    if let title = singleMovie.title { movie.title = title}
+                    if let poster_path = singleMovie.poster_path { movie.poster_path = "https://image.tmdb.org/t/p/w500\(poster_path)"}
+                    if let overview = singleMovie.overview { movie.overview = overview}
 
                     movieArray.append(movie)
                 }
@@ -82,13 +82,12 @@ class MovieAPIManager {
                 let response = CallStatus(success: true, movies: movieArray, error: nil)
                 callback(response)
         }
-        
     }
     
+    
     //MARK: - Helper methods
-    func getUrlWithKey() -> String {
-        let apiKey = "4cb1eeab94f45affe2536f2c684a5c9e"
-        return baseUrl + apiKey
+    func getApiKey() -> String {
+        return (dict?.object(forKey: "apiKey") as? String)!
     }
     
     

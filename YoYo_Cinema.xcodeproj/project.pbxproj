@@ -24,7 +24,16 @@
 		A8E0670320AB5633002F0965 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670220AB5633002F0965 /* Movie.swift */; };
 		A8E0670520AB5717002F0965 /* SpinnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670420AB5717002F0965 /* SpinnerTableViewCell.swift */; };
 		A8E0670720AB5832002F0965 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670620AB5832002F0965 /* SearchController.swift */; };
-		A8E0670920AB58B1002F0965 /* MovieAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670820AB58B1002F0965 /* MovieAPIManager.swift */; };
+		A8E0670920AB58B1002F0965 /* SearchMoviesIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670820AB58B1002F0965 /* SearchMoviesIntegration.swift */; };
+		A8E0670B20AC2FDD002F0965 /* MovieDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670A20AC2FDD002F0965 /* MovieDetailsVC.swift */; };
+		A8E0670D20AC5975002F0965 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670C20AC5975002F0965 /* DetailsController.swift */; };
+		A8E0670F20AC672D002F0965 /* GetDetailsIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0670E20AC672D002F0965 /* GetDetailsIntegration.swift */; };
+		A8E0671320AC720A002F0965 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0671220AC720A002F0965 /* Genre.swift */; };
+		A8E0671520ACC3C4002F0965 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0671420ACC3C4002F0965 /* Constants.swift */; };
+		A8E0671720ACC4FB002F0965 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0671620ACC4FB002F0965 /* RealmManager.swift */; };
+		A8E0671920ACC61B002F0965 /* RealmMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0671820ACC61B002F0965 /* RealmMovie.swift */; };
+		A8E0671B20ACC67D002F0965 /* RealmGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E0671A20ACC67D002F0965 /* RealmGenre.swift */; };
+		A8E0671D20ACC791002F0965 /* theMovieDB.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8E0671C20ACC791002F0965 /* theMovieDB.plist */; };
 		FF96279ED193D0AF38355173 /* Pods_YoYo_Cinema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C4CB683390DFB43EA5290B6 /* Pods_YoYo_Cinema.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +81,16 @@
 		A8E0670220AB5633002F0965 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		A8E0670420AB5717002F0965 /* SpinnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerTableViewCell.swift; sourceTree = "<group>"; };
 		A8E0670620AB5832002F0965 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
-		A8E0670820AB58B1002F0965 /* MovieAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIManager.swift; sourceTree = "<group>"; };
+		A8E0670820AB58B1002F0965 /* SearchMoviesIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMoviesIntegration.swift; sourceTree = "<group>"; };
+		A8E0670A20AC2FDD002F0965 /* MovieDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVC.swift; sourceTree = "<group>"; };
+		A8E0670C20AC5975002F0965 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		A8E0670E20AC672D002F0965 /* GetDetailsIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailsIntegration.swift; sourceTree = "<group>"; };
+		A8E0671220AC720A002F0965 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		A8E0671420ACC3C4002F0965 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A8E0671620ACC4FB002F0965 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		A8E0671820ACC61B002F0965 /* RealmMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMovie.swift; sourceTree = "<group>"; };
+		A8E0671A20ACC67D002F0965 /* RealmGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGenre.swift; sourceTree = "<group>"; };
+		A8E0671C20ACC791002F0965 /* theMovieDB.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = theMovieDB.plist; sourceTree = "<group>"; };
 		CE62813B9D8C5737EB4F492F /* Pods_YoYo_CinemaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoYo_CinemaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1431E9F0067FD1F3EB4DA97 /* Pods-YoYo_Cinema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYo_Cinema.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YoYo_Cinema/Pods-YoYo_Cinema.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +202,7 @@
 			children = (
 				A8E066BD20AB305F002F0965 /* YoYo_Cinema.xcdatamodeld */,
 				A8E066C520AB305F002F0965 /* Info.plist */,
+				A8E0671C20ACC791002F0965 /* theMovieDB.plist */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -191,6 +210,7 @@
 		A8E066E820AB307F002F0965 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A8E0671420ACC3C4002F0965 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -213,7 +233,8 @@
 		A8E066EB20AB3093002F0965 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				A8E0670820AB58B1002F0965 /* MovieAPIManager.swift */,
+				A8E0671020AC6732002F0965 /* The Movie DB */,
+				A8E0671620ACC4FB002F0965 /* RealmManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -222,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				A8E0670620AB5832002F0965 /* SearchController.swift */,
+				A8E0670C20AC5975002F0965 /* DetailsController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -230,6 +252,9 @@
 			isa = PBXGroup;
 			children = (
 				A8E0670220AB5633002F0965 /* Movie.swift */,
+				A8E0671220AC720A002F0965 /* Genre.swift */,
+				A8E0671820ACC61B002F0965 /* RealmMovie.swift */,
+				A8E0671A20ACC67D002F0965 /* RealmGenre.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +266,7 @@
 				A8E066F320AB3AF1002F0965 /* Menu */,
 				A8E066FE20AB4BDA002F0965 /* Search */,
 				A8E066FF20AB4BE6002F0965 /* Favourites */,
+				A8E0670A20AC2FDD002F0965 /* MovieDetailsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -288,6 +314,15 @@
 				A8E066FC20AB45B6002F0965 /* FavouritesVC.swift */,
 			);
 			path = Favourites;
+			sourceTree = "<group>";
+		};
+		A8E0671020AC6732002F0965 /* The Movie DB */ = {
+			isa = PBXGroup;
+			children = (
+				A8E0670E20AC672D002F0965 /* GetDetailsIntegration.swift */,
+				A8E0670820AB58B1002F0965 /* SearchMoviesIntegration.swift */,
+			);
+			path = "The Movie DB";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8E066C420AB305F002F0965 /* LaunchScreen.storyboard in Resources */,
+				A8E0671D20ACC791002F0965 /* theMovieDB.plist in Resources */,
 				A8E066C120AB305F002F0965 /* Assets.xcassets in Resources */,
 				A8E066BC20AB305F002F0965 /* Main.storyboard in Resources */,
 			);
@@ -432,6 +468,7 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
+				"${BUILT_PRODUCTS_DIR}/ZOZolaZoomTransition/ZOZolaZoomTransition.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -441,6 +478,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZOZolaZoomTransition.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -472,6 +510,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8E0671920ACC61B002F0965 /* RealmMovie.swift in Sources */,
+				A8E0670F20AC672D002F0965 /* GetDetailsIntegration.swift in Sources */,
 				A8E0670520AB5717002F0965 /* SpinnerTableViewCell.swift in Sources */,
 				A8E066F920AB3CE9002F0965 /* MenuFavouritesTableViewCell.swift in Sources */,
 				A8E066F220AB36BC002F0965 /* SearchVC.swift in Sources */,
@@ -479,12 +519,18 @@
 				A8E066B920AB305F002F0965 /* LaunchVC.swift in Sources */,
 				A8E0670320AB5633002F0965 /* Movie.swift in Sources */,
 				A8E066F520AB3AFD002F0965 /* MenuTableViewController.swift in Sources */,
+				A8E0670D20AC5975002F0965 /* DetailsController.swift in Sources */,
 				A8E0670720AB5832002F0965 /* SearchController.swift in Sources */,
+				A8E0671320AC720A002F0965 /* Genre.swift in Sources */,
+				A8E0671720ACC4FB002F0965 /* RealmManager.swift in Sources */,
 				A8E066BF20AB305F002F0965 /* YoYo_Cinema.xcdatamodeld in Sources */,
+				A8E0671B20ACC67D002F0965 /* RealmGenre.swift in Sources */,
 				A8E066F720AB3CB6002F0965 /* MenuSearchTableViewCell.swift in Sources */,
-				A8E0670920AB58B1002F0965 /* MovieAPIManager.swift in Sources */,
+				A8E0670920AB58B1002F0965 /* SearchMoviesIntegration.swift in Sources */,
 				A8E066B720AB305F002F0965 /* AppDelegate.swift in Sources */,
+				A8E0670B20AC2FDD002F0965 /* MovieDetailsVC.swift in Sources */,
 				A8E066FD20AB45B6002F0965 /* FavouritesVC.swift in Sources */,
+				A8E0671520ACC3C4002F0965 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,8 +706,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4P7ALFHXZ;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"ZO_APP_EXTENSIONS=1",
+				);
 				INFOPLIST_FILE = YoYo_Cinema/Configs/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-Cinema";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -676,8 +730,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4P7ALFHXZ;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"ZO_APP_EXTENSIONS=1",
+				);
 				INFOPLIST_FILE = YoYo_Cinema/Configs/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-Cinema";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -692,7 +754,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YoYo_CinemaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -708,7 +774,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YoYo_CinemaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -723,7 +793,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YoYo_CinemaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -738,7 +812,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YoYo_CinemaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

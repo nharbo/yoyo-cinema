@@ -49,5 +49,11 @@ class MovieTableViewCell: UITableViewCell {
             self.movieTitle.text = "N/A"
         }
     }
+    
+    //Prevents reuse of images and text
+    func resetCell() {
+        self.movieImageView.image = nil
+        self.movieTitle.text = ""
+    }
 
 }
