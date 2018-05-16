@@ -266,7 +266,7 @@
 				A8E066F320AB3AF1002F0965 /* Menu */,
 				A8E066FE20AB4BDA002F0965 /* Search */,
 				A8E066FF20AB4BE6002F0965 /* Favourites */,
-				A8E0670A20AC2FDD002F0965 /* MovieDetailsVC.swift */,
+				A8E0671E20ACCE07002F0965 /* Details */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -323,6 +323,14 @@
 				A8E0670820AB58B1002F0965 /* SearchMoviesIntegration.swift */,
 			);
 			path = "The Movie DB";
+			sourceTree = "<group>";
+		};
+		A8E0671E20ACCE07002F0965 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				A8E0670A20AC2FDD002F0965 /* MovieDetailsVC.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

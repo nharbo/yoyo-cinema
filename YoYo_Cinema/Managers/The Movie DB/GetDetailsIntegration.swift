@@ -69,7 +69,7 @@ class GetDetailsIntegration {
                 if let genres = general.genres {
                     var arr = [Genre]()
                     for genre in genres {
-                        var genre = Genre(id: genre.id!, name: genre.name!)
+                        let genre = Genre(id: genre.id!, name: genre.name!)
                         arr.append(genre)
                     }
                     movie.genres = arr

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        // Realm migration
+        
+        // Set the new schema version. This must be greater than the previously used
+        // version (if you've never set a schema version before, the version is 0).
+        
+        // Set the block which will be called automatically when opening a Realm with
+        // a schema version lower than the one set above
+        print("Creating config for Realm")
+        let config = Realm.Configuration(schemaVersion: 1, migrationBlock: { migration, oldSchemaVersion in
+            print("REALM MIGRATION RUNNING!")
+            // We haven’t migrated anything yet, so oldSchemaVersion == 0
+            if (oldSchemaVersion < 1) {
+                print("REALM MIGRATION: Old version lower than current - updating!")
+                // Nothing to do!
+                // Realm will automatically detect new properties and removed properties
+                // And will update the schema on disk automatically
+                
+                // OR! if anything has to be converted:
+                // The enumerateObjects(ofType:_:) method iterates over every Person object stored in the Realm file
+                // migration.enumerate(RealmUser.className(), { (oldObject, newObject) in
+                // // combine name fields into a single field
+                // let firstName = oldObject!["firstName"] as! String
+                // let lastName = oldObject!["lastName"] as! String
+                // newObject!["fullName"] = "\(firstName) \(lastName)"
+                // })
+                
+                // The renaming operation should be done outside of calls to `enumerateObjects(ofType: _:)`.
+                // migration.renameProperty(onType: RealmUser.className(), from: "yearsSinceBirth", to: "age")
+                
+            }
+        })
+        
+        // Tell Realm to use this new configuration object for the default Realm
+        print("Setting config to Realm")
+        Realm.Configuration.defaultConfiguration = config
+        
+        // Now that we've told Realm how to handle the schema change, opening the file
+        // will automatically perform the migration
+        print("trying Realm")
+        let realm = try! Realm()
+        // let realm = try! Realm(configuration: config) // Invoke migration block if needed
         
         return true
     }

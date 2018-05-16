@@ -17,6 +17,7 @@ class MovieDetailsVC: UIViewController {
     
     //MARK: - Variables
     var movie: Movie?
+    var isFavourite = false
     
     //MARK: - IBOutlets
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -24,7 +25,28 @@ class MovieDetailsVC: UIViewController {
     @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var taglineLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var favouriteButton: UIButton!
     
+    //MARK: - IBActions
+    @IBAction func favouriteButtonTapped(_ sender: Any) {
+        if isFavourite {
+            print("Movie is a favourite! Removing")
+            controller.removeFavourite(movie: self.movie!) { (done) in
+                if done {
+                    self.isFavourite = false
+                    self.favouriteButton.setTitle("ADD TO FAVOURITES", for: .normal)
+                }
+            }
+        } else {
+            print("Movie is not a favourite! Adding")
+            controller.addFavourite(movie: self.movie!) { (done) in
+                if done {
+                    self.isFavourite = true
+                    self.favouriteButton.setTitle("REMOVE FROM FAVOURITES", for: .normal)
+                }
+            }
+        }
+    }
     
     
     //MARK: - Lifecycle
@@ -34,6 +56,15 @@ class MovieDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //Check if movie is in favourites
+        if self.controller.isMovieAFavourite(movie: self.movie!) {
+            self.isFavourite = true
+            self.favouriteButton.setTitle("REMOVE FROM FAVOURITES", for: .normal)
+        } else {
+            self.isFavourite = false
+            self.favouriteButton.setTitle("ADD TO FAVOURITES", for: .normal)
+        }
         
         self.title = movie?.title!
         
@@ -55,7 +86,7 @@ class MovieDetailsVC: UIViewController {
                     if let tagline = movie.tagline { self.taglineLabel.text = "'\(tagline)'" }
                     if let overview = movie.overview { self.overviewLabel.text = overview }
                 } else {
-                    //Set N/A
+                    //TODO: Set N/A
                 }
             } else {
                 if let error = response.error {

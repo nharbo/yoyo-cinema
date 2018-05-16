@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmGenre: Object {
     
-    @objc dynamic var id: NSNumber?
+    @objc dynamic var id = 0
     @objc dynamic var name: String?
     
     override class func primaryKey() -> String? {

@@ -337,6 +337,20 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJj-E6-ayC">
+                                        <rect key="frame" x="0.0" y="558" width="375" height="45"/>
+                                        <color key="backgroundColor" red="0.51764705879999995" green="0.80784313730000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="2oE-0z-o7f"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="ADD TO FAVOURITES">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="favouriteButtonTapped:" destination="Ptf-fd-EMD" eventType="touchUpInside" id="Hr0-MV-2Pq"/>
+                                        </connections>
+                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Released: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0B5-zc-kUT">
                                         <rect key="frame" x="15" y="50" width="345" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -347,19 +361,22 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="0B5-zc-kUT" firstAttribute="leading" secondItem="7au-22-zb6" secondAttribute="leading" constant="15" id="0TO-a4-Vic"/>
+                                    <constraint firstItem="vJj-E6-ayC" firstAttribute="leading" secondItem="7au-22-zb6" secondAttribute="leading" id="38u-gh-gg2"/>
+                                    <constraint firstAttribute="trailing" secondItem="vJj-E6-ayC" secondAttribute="trailing" id="5sy-HW-mA9"/>
                                     <constraint firstAttribute="trailing" secondItem="0B5-zc-kUT" secondAttribute="trailing" constant="15" id="8Km-fr-ekj"/>
                                     <constraint firstItem="ZrE-Mk-eyj" firstAttribute="leading" secondItem="7au-22-zb6" secondAttribute="leading" constant="15" id="BUP-kS-QdZ"/>
                                     <constraint firstItem="qpU-fE-8RW" firstAttribute="leading" secondItem="0B5-zc-kUT" secondAttribute="leading" id="GHE-aa-2f0"/>
                                     <constraint firstItem="ZrE-Mk-eyj" firstAttribute="trailing" secondItem="cAd-NI-L0q" secondAttribute="trailing" id="OIo-KM-qCn"/>
                                     <constraint firstItem="qpU-fE-8RW" firstAttribute="trailing" secondItem="0B5-zc-kUT" secondAttribute="trailing" id="QeT-Gm-MP0"/>
+                                    <constraint firstItem="vJj-E6-ayC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZrE-Mk-eyj" secondAttribute="bottom" constant="15" id="Scd-dt-Ugv"/>
                                     <constraint firstItem="qpU-fE-8RW" firstAttribute="top" secondItem="0B5-zc-kUT" secondAttribute="bottom" constant="10" id="TtB-1g-yVe"/>
                                     <constraint firstItem="ZrE-Mk-eyj" firstAttribute="top" secondItem="cAd-NI-L0q" secondAttribute="bottom" constant="10" id="a2X-Hc-wpJ"/>
                                     <constraint firstItem="cAd-NI-L0q" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qpU-fE-8RW" secondAttribute="bottom" constant="20" id="aTq-hh-0uY"/>
                                     <constraint firstAttribute="trailing" secondItem="cAd-NI-L0q" secondAttribute="trailing" constant="15" id="eX2-IN-98G"/>
                                     <constraint firstItem="cAd-NI-L0q" firstAttribute="centerY" secondItem="7au-22-zb6" secondAttribute="centerY" id="eaY-EJ-mEh"/>
+                                    <constraint firstAttribute="bottom" secondItem="vJj-E6-ayC" secondAttribute="bottom" id="hdZ-ii-j9z"/>
                                     <constraint firstItem="cAd-NI-L0q" firstAttribute="leading" secondItem="7au-22-zb6" secondAttribute="leading" constant="15" id="lyN-LN-iUM"/>
                                     <constraint firstItem="0B5-zc-kUT" firstAttribute="top" secondItem="7au-22-zb6" secondAttribute="top" constant="50" id="rB6-CC-9ro"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZrE-Mk-eyj" secondAttribute="bottom" constant="15" id="zip-9N-jTa"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -382,6 +399,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="p2G-Jk-i4M" id="22t-14-zO0"/>
+                        <outlet property="favouriteButton" destination="vJj-E6-ayC" id="HDP-MI-Xv2"/>
                         <outlet property="genresLabel" destination="qpU-fE-8RW" id="d3P-io-iT7"/>
                         <outlet property="overviewLabel" destination="ZrE-Mk-eyj" id="vca-5m-niY"/>
                         <outlet property="releaseDateLabel" destination="0B5-zc-kUT" id="Px8-1Z-si3"/>

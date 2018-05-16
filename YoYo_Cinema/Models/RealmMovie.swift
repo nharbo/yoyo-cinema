@@ -11,14 +11,15 @@ import RealmSwift
 
 class RealmMovie: Object {
     
-    @objc dynamic var id: NSNumber?
+    @objc dynamic var id = 0
     @objc dynamic var title: String?
     @objc dynamic var poster_path: String?
     @objc dynamic var overview: String?
-    @objc dynamic var genres: [RealmGenre]?
+    var genres = List<RealmGenre>()
     @objc dynamic var release_date: String?
-    @objc dynamic var runtime: NSNumber?
+    @objc dynamic var runtime = 0
     @objc dynamic var tagline: String?
+    
     
     override class func primaryKey() -> String? {
         return "id"

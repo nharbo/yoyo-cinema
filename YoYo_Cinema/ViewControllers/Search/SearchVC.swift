@@ -116,14 +116,14 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if showSpinner {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SpinnerTableViewCell", for: indexPath) as! SpinnerTableViewCell
-            
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
             cell.movie = self.movies[indexPath.row]
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
