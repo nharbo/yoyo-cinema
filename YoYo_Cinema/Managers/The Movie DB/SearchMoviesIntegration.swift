@@ -18,6 +18,17 @@ class SearchMoviesIntegration {
     //MARK: - Constants
     let dict = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "theMovieDB", ofType: "plist")!)
     
+    //MARK: - Variables
+    private var _latestSearchResults: [Movie]!
+    var latestSearchResults: [Movie]? {
+        get {
+            return _latestSearchResults
+        }
+        set {
+            _latestSearchResults = newValue
+        }
+    }
+    
     //MARK: - Structs
     struct CallStatus {
         var success: Bool
@@ -79,6 +90,7 @@ class SearchMoviesIntegration {
                     movieArray.append(movie)
                 }
                 
+                self.latestSearchResults = movieArray
                 let response = CallStatus(success: true, movies: movieArray, error: nil)
                 callback(response)
         }

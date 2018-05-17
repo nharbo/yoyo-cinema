@@ -44,7 +44,6 @@
         <!--Reveal View Controller-->
         <scene sceneID="Whl-rd-Ueb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="19P-Qv-SwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="lva-gT-aWs" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WfE-P3-TOn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -57,6 +56,7 @@
                         <segue destination="gof-jt-2Iz" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="Dxb-OS-ccR"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="19P-Qv-SwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="790" y="24"/>
         </scene>
@@ -201,22 +201,31 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7W-nv-z5g">
-                                                    <rect key="frame" x="118" y="20" width="237" height="20.5"/>
+                                                    <rect key="frame" x="115" y="20" width="240" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favourite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7XB-DE-BlA">
+                                                    <rect key="frame" x="285" y="93.5" width="70" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="I7W-nv-z5g" firstAttribute="leading" secondItem="bQV-Lb-tIB" secondAttribute="trailing" constant="23" id="3tc-Ac-KrW"/>
+                                                <constraint firstItem="I7W-nv-z5g" firstAttribute="leading" secondItem="bQV-Lb-tIB" secondAttribute="trailing" constant="20" id="3tc-Ac-KrW"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bQV-Lb-tIB" secondAttribute="bottom" constant="20" id="Fy4-ow-tP8"/>
+                                                <constraint firstAttribute="trailing" secondItem="7XB-DE-BlA" secondAttribute="trailing" constant="20" id="IyI-Bn-qSP"/>
                                                 <constraint firstItem="I7W-nv-z5g" firstAttribute="top" secondItem="bQV-Lb-tIB" secondAttribute="top" id="KUt-op-t9V"/>
+                                                <constraint firstAttribute="bottom" secondItem="7XB-DE-BlA" secondAttribute="bottom" constant="20" id="Mux-U5-BcS"/>
                                                 <constraint firstItem="bQV-Lb-tIB" firstAttribute="leading" secondItem="keb-ee-AGB" secondAttribute="leading" constant="20" id="kRy-8r-fwg"/>
                                                 <constraint firstAttribute="trailing" secondItem="I7W-nv-z5g" secondAttribute="trailing" constant="20" id="pcn-pH-Jto"/>
                                                 <constraint firstItem="bQV-Lb-tIB" firstAttribute="top" secondItem="keb-ee-AGB" secondAttribute="top" constant="20" id="yY8-tn-rbz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="isFavouriteLabel" destination="7XB-DE-BlA" id="uuv-y2-17a"/>
                                             <outlet property="movieImageView" destination="bQV-Lb-tIB" id="Bre-ge-0yI"/>
                                             <outlet property="movieTitle" destination="I7W-nv-z5g" id="YJW-Iu-LDx"/>
                                         </connections>
@@ -278,6 +287,56 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bwd-CE-SZV">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavouriteMovieTableViewCell" rowHeight="150" id="mCT-vg-FNi" customClass="FavouriteMovieTableViewCell" customModule="YoYo_Cinema" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mCT-vg-FNi" id="LFF-mB-bVy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7tI-9E-uvD">
+                                                    <rect key="frame" x="20" y="20" width="75" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="75" id="hEm-oD-jmJ"/>
+                                                        <constraint firstAttribute="width" secondItem="7tI-9E-uvD" secondAttribute="height" multiplier="1:1" id="mxP-af-6UU"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiG-2D-qaM">
+                                                    <rect key="frame" x="115" y="20" width="34" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YL-be-d04">
+                                                    <rect key="frame" x="211" y="101.5" width="144" height="28"/>
+                                                    <color key="backgroundColor" red="0.51764705879999995" green="0.80784313730000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <state key="normal" title="Remove from favourites">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="removeFavouriteButtonTapped:" destination="mCT-vg-FNi" eventType="touchUpInside" id="yhO-y3-hF5"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7tI-9E-uvD" firstAttribute="leading" secondItem="LFF-mB-bVy" secondAttribute="leading" constant="20" id="BAh-gr-A4U"/>
+                                                <constraint firstAttribute="trailing" secondItem="6YL-be-d04" secondAttribute="trailing" constant="20" id="HWS-lc-NoN"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="7tI-9E-uvD" secondAttribute="bottom" constant="20" id="Klo-qo-VUN"/>
+                                                <constraint firstItem="7tI-9E-uvD" firstAttribute="top" secondItem="LFF-mB-bVy" secondAttribute="top" constant="20" id="LYb-nX-ejP"/>
+                                                <constraint firstItem="NiG-2D-qaM" firstAttribute="leading" secondItem="7tI-9E-uvD" secondAttribute="trailing" constant="20" id="Vg3-ZE-JYX"/>
+                                                <constraint firstAttribute="bottom" secondItem="6YL-be-d04" secondAttribute="bottom" constant="20" id="cai-gG-xmn"/>
+                                                <constraint firstItem="NiG-2D-qaM" firstAttribute="top" secondItem="7tI-9E-uvD" secondAttribute="top" id="y4d-Ba-8ZL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="movieImageView" destination="7tI-9E-uvD" id="WAe-iC-5hJ"/>
+                                            <outlet property="removeFavouriteButton" destination="6YL-be-d04" id="IyL-pd-wNm"/>
+                                            <outlet property="titleLabel" destination="NiG-2D-qaM" id="dCF-6Z-NIg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -294,6 +353,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="nkF-QN-VaP" id="0DU-Jv-ynk"/>
+                        <outlet property="tableView" destination="bwd-CE-SZV" id="lyE-Rc-bjS"/>
                         <segue destination="Ptf-fd-EMD" kind="show" identifier="favouritesToDetails" id="aiV-MU-Qu7"/>
                     </connections>
                 </viewController>

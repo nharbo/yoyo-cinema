@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80DBCFF20ADA6760059E740 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80DBCFE20ADA6760059E740 /* FavouritesController.swift */; };
+		A80DBD0120ADBDF60059E740 /* FavouriteMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80DBD0020ADBDF60059E740 /* FavouriteMovieTableViewCell.swift */; };
 		A8E066B720AB305F002F0965 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066B620AB305F002F0965 /* AppDelegate.swift */; };
 		A8E066B920AB305F002F0965 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066B820AB305F002F0965 /* LaunchVC.swift */; };
 		A8E066BC20AB305F002F0965 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8E066BA20AB305F002F0965 /* Main.storyboard */; };
@@ -58,6 +60,8 @@
 		37A2115103B5E81325C3DBF3 /* Pods-YoYo_Cinema.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYo_Cinema.release.xcconfig"; path = "Pods/Target Support Files/Pods-YoYo_Cinema/Pods-YoYo_Cinema.release.xcconfig"; sourceTree = "<group>"; };
 		3C4CB683390DFB43EA5290B6 /* Pods_YoYo_Cinema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoYo_Cinema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		771108844FC7D71018A671FF /* Pods_YoYo_CinemaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoYo_CinemaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A80DBCFE20ADA6760059E740 /* FavouritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
+		A80DBD0020ADBDF60059E740 /* FavouriteMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMovieTableViewCell.swift; sourceTree = "<group>"; };
 		A8E066B320AB305F002F0965 /* YoYo_Cinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoYo_Cinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E066B620AB305F002F0965 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8E066B820AB305F002F0965 /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 			children = (
 				A8E0670620AB5832002F0965 /* SearchController.swift */,
 				A8E0670C20AC5975002F0965 /* DetailsController.swift */,
+				A80DBCFE20ADA6760059E740 /* FavouritesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				A8E066FC20AB45B6002F0965 /* FavouritesVC.swift */,
+				A80DBD0020ADBDF60059E740 /* FavouriteMovieTableViewCell.swift */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -518,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80DBD0120ADBDF60059E740 /* FavouriteMovieTableViewCell.swift in Sources */,
 				A8E0671920ACC61B002F0965 /* RealmMovie.swift in Sources */,
 				A8E0670F20AC672D002F0965 /* GetDetailsIntegration.swift in Sources */,
 				A8E0670520AB5717002F0965 /* SpinnerTableViewCell.swift in Sources */,
@@ -533,6 +540,7 @@
 				A8E0671720ACC4FB002F0965 /* RealmManager.swift in Sources */,
 				A8E066BF20AB305F002F0965 /* YoYo_Cinema.xcdatamodeld in Sources */,
 				A8E0671B20ACC67D002F0965 /* RealmGenre.swift in Sources */,
+				A80DBCFF20ADA6760059E740 /* FavouritesController.swift in Sources */,
 				A8E066F720AB3CB6002F0965 /* MenuSearchTableViewCell.swift in Sources */,
 				A8E0670920AB58B1002F0965 /* SearchMoviesIntegration.swift in Sources */,
 				A8E066B720AB305F002F0965 /* AppDelegate.swift in Sources */,

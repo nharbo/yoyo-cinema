@@ -30,19 +30,21 @@ class MovieDetailsVC: UIViewController {
     //MARK: - IBActions
     @IBAction func favouriteButtonTapped(_ sender: Any) {
         if isFavourite {
-            print("Movie is a favourite! Removing")
+            //Movie is a favourite! Removing
             controller.removeFavourite(movie: self.movie!) { (done) in
                 if done {
                     self.isFavourite = false
                     self.favouriteButton.setTitle("ADD TO FAVOURITES", for: .normal)
+                    self.callObserverToReloadSearchResults()
                 }
             }
         } else {
-            print("Movie is not a favourite! Adding")
+            //Movie is not a favourite! Adding
             controller.addFavourite(movie: self.movie!) { (done) in
                 if done {
                     self.isFavourite = true
                     self.favouriteButton.setTitle("REMOVE FROM FAVOURITES", for: .normal)
+                    self.callObserverToReloadSearchResults()
                 }
             }
         }
@@ -95,6 +97,11 @@ class MovieDetailsVC: UIViewController {
                 }
             }
         }
+    }
+    
+    //MARK: - Helper methods
+    func callObserverToReloadSearchResults() {
+        NotificationCenter.default.post(name: Constants.SEARCH_VC_RELOAD_TABLEVIEW_NOTIFICATION, object: nil) //Notifying SearchVC
     }
 
     override func didReceiveMemoryWarning() {

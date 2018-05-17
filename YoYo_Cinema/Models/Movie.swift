@@ -18,7 +18,7 @@ class Movie: NSObject {
     var release_date: String?
     var runtime: Int?
     var tagline: String?
-    
+
 }
 
 

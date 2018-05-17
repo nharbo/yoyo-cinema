@@ -17,7 +17,7 @@ class SearchVC: UIViewController {
     
     //MARK: - Variables
     private var movies = [Movie]()
-    var showSpinner = false
+    private var showSpinner = false
     
     //MARK: - IBOutlets
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -27,10 +27,12 @@ class SearchVC: UIViewController {
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.title = "Search movies"
 
         //Menu setup
+        let revealController = self.revealViewController()
+        revealController?.tapGestureRecognizer()
         revealViewController().delegate = self
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(self.revealViewController().revealToggle(_:))
@@ -43,8 +45,21 @@ class SearchVC: UIViewController {
         //Searchbar setup
         self.searchBar.delegate = self
         
+        //Observers
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTableView), name: Constants.SEARCH_VC_RELOAD_TABLEVIEW_NOTIFICATION, object: nil)
+        
 //        //Transition setup
 //        self.navigationController?.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Get latest search results, if any
+        print("viewWillAppear")
+        if let latestSearchResult = controller.getLastSearchResults() {
+            self.movies = latestSearchResult
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +77,11 @@ class SearchVC: UIViewController {
     //MARK: - Helper Methods
     func stopSpinnerAndReloadTableView() {
         self.showSpinner = false
+        self.tableView.reloadData()
+    }
+    
+    //MARK: - Observer handeling
+    @objc func reloadTableView(notification: NSNotification) {
         self.tableView.reloadData()
     }
 
@@ -120,7 +140,14 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
-            cell.movie = self.movies[indexPath.row]
+            let movie = self.movies[indexPath.row]
+            //Check if movie is a favourite
+            if self.controller.isMovieAFavourite(movie: movie) {
+                cell.isFavourite = true
+            } else {
+                cell.isFavourite = false
+            }
+            cell.movie = movie
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }

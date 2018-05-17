@@ -1,33 +1,17 @@
 //
-//  DetailsController.swift
+//  FavouritesController.swift
 //  YoYo_Cinema
 //
-//  Created by Nicolai Harbo on 16/05/2018.
+//  Created by Nicolai Harbo on 17/05/2018.
 //  Copyright © 2018 nicoware. All rights reserved.
 //
 
 import Foundation
 
-class DetailsController {
+class FavouritesController {
     
     //MARK: - Constants
-    let api = GetDetailsIntegration.sharedInstance
     let realm = RealmManager.sharedInstance
-    
-    //MARK: - Structs
-    struct CallStatus {
-        var success: Bool
-        var movie: Movie?
-        var error: String?
-    }
-    
-    //MARK: - API calls
-    func getMovieDetails(movie: Movie, callback: @escaping (CallStatus) -> Void){
-        api.getMovieDetails(movie: movie) { (response) in
-            let response = CallStatus(success: response.success, movie: response.movie, error: response.error)
-            callback(response)
-        }
-    }
     
     //MARK: - Realm calls
     func isMovieAFavourite(movie: Movie) -> Bool {
@@ -51,6 +35,12 @@ class DetailsController {
             if success {
                 callback(true)
             }
+        }
+    }
+    
+    func getFavourites(callback: (_ realmMovies: [Movie]) -> Void) {
+        realm.getFavourites { (result) in
+            callback(result)
         }
     }
     

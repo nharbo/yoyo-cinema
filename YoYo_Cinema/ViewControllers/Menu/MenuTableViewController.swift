@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SWRevealViewController
 
 class MenuTableViewController: UITableViewController {
 
@@ -19,6 +20,16 @@ class MenuTableViewController: UITableViewController {
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.revealViewController().frontViewController.view.isUserInteractionEnabled = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.revealViewController().frontViewController.view.isUserInteractionEnabled = true
+    }
 
     //MARK: - TableView Setup
     //To make segues from the tableview, ctrl-drag from the cell to the navigationcontroller/view and choose "reveal view controller push controller"

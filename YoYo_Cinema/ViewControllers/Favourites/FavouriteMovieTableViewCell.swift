@@ -1,36 +1,37 @@
 //
-//  MovieTableViewCell.swift
+//  FavouriteMovieTableViewCell.swift
 //  YoYo_Cinema
 //
-//  Created by Nicolai Harbo on 15/05/2018.
+//  Created by Nicolai Harbo on 17/05/2018.
 //  Copyright © 2018 nicoware. All rights reserved.
 //
 
 import UIKit
-import SDWebImage
 
-class MovieTableViewCell: UITableViewCell {
+@objc protocol FavouriteMovieTableViewCellDelegate: class {
+    func removeFromFavourites(movie: Movie)
+}
+
+class FavouriteMovieTableViewCell: UITableViewCell {
     
     //MARK: - Variables
     var movie: Movie? {
         didSet {
-            self.updateCell()
+            updateInfo()
         }
     }
-    var isFavourite: Bool? {
-        didSet {
-            if self.isFavourite! {
-                self.isFavouriteLabel.text = "Favourite"
-            } else {
-                self.isFavouriteLabel.text = ""
-            }
-        }
-    }
+    var delegate: FavouriteMovieTableViewCellDelegate?
     
-    //MARK: IBOutlets
+    //MARK: - IBOUtlets
     @IBOutlet weak var movieImageView: UIImageView!
-    @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var isFavouriteLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var removeFavouriteButton: UIButton!
+    
+    //MARK: - IBActions
+    @IBAction func removeFavouriteButtonTapped(_ sender: Any) {
+        print("removeFavouriteButtonTapped")
+        self.delegate?.removeFromFavourites(movie: self.movie!)
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,8 +44,7 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     //MARK: - Functions
-    func updateCell() {
-        
+    func updateInfo() {
         if let imageUrl = movie?.poster_path {
             let url = URL(string: imageUrl)
             self.movieImageView.sd_setImage(with: url) { (image, error, cacheType, url) in
@@ -53,16 +53,16 @@ class MovieTableViewCell: UITableViewCell {
             //TODO: Set placeholder
         }
         if let title = movie?.title {
-            self.movieTitle.text = title
+            self.titleLabel.text = title
         } else {
-            self.movieTitle.text = "N/A"
+            self.titleLabel.text = "N/A"
         }
     }
     
     //Prevents reuse of images and text
     func resetCell() {
         self.movieImageView.image = nil
-        self.movieTitle.text = ""
+        self.titleLabel.text = ""
     }
 
 }
