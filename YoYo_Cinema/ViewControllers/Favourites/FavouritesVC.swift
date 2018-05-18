@@ -35,14 +35,20 @@ class FavouritesVC: UIViewController {
         menuButton.target = self.revealViewController()
         menuButton.action = #selector(self.revealViewController().revealToggle(_:))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        //Add observers
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTableView), name: Constants.FAVOURITES_VC_RELOAD_TABLEVIEW_NOTIFICATION, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        controller.getFavourites { (favourites) in
-            self.favouriteMovies = favourites
-            self.tableView.reloadData()
-        }
+        self.getFavouritesAndReload()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        //Remove observer
+        NotificationCenter.default.removeObserver(self, name: Constants.FAVOURITES_VC_RELOAD_TABLEVIEW_NOTIFICATION, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +61,19 @@ class FavouritesVC: UIViewController {
             let vc = segue.destination as! MovieDetailsVC
             vc.movie = self.favouriteMovies[sender as! Int]
         }
+    }
+    
+    //MARK: - Helper methods
+    func getFavouritesAndReload() {
+        controller.getFavourites { (favourites) in
+            self.favouriteMovies = favourites
+            self.tableView.reloadData()
+        }
+    }
+    
+    //MARK: - Observer handeling
+    @objc func reloadTableView(notification: NSNotification) {
+        self.getFavouritesAndReload()
     }
 
 }

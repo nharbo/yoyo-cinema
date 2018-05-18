@@ -12,5 +12,6 @@ class Constants {
     
     static let BASE_API_URL = "https://api.themoviedb.org/3/"
     static let SEARCH_VC_RELOAD_TABLEVIEW_NOTIFICATION = NSNotification.Name(rawValue: "SearchVCReloadTableViewNotification")
+    static let FAVOURITES_VC_RELOAD_TABLEVIEW_NOTIFICATION = NSNotification.Name(rawValue: "FavouritesVCReloadTableViewNotification")
     
 }

@@ -44,8 +44,9 @@ class SearchVC: UIViewController {
         //Searchbar setup
         self.searchBar.delegate = self
         
-        //Observers
+        //Add observers
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTableView), name: Constants.SEARCH_VC_RELOAD_TABLEVIEW_NOTIFICATION, object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +56,12 @@ class SearchVC: UIViewController {
             self.movies = latestSearchResult
             self.tableView.reloadData()
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        //Remove observer
+        NotificationCenter.default.removeObserver(self, name: Constants.SEARCH_VC_RELOAD_TABLEVIEW_NOTIFICATION, object: nil)
     }
 
     override func didReceiveMemoryWarning() {

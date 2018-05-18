@@ -50,6 +50,9 @@ class MovieDetailsVC: UIViewController {
         }
     }
     
+    @IBAction func closeButtonTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -58,7 +61,7 @@ class MovieDetailsVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         //Check if movie is in favourites
         if self.controller.isMovieAFavourite(movie: self.movie!) {
             self.isFavourite = true
@@ -106,6 +109,7 @@ class MovieDetailsVC: UIViewController {
     
     //MARK: - Helper methods
     func callObserverToReloadSearchResults() {
+        NotificationCenter.default.post(name: Constants.FAVOURITES_VC_RELOAD_TABLEVIEW_NOTIFICATION, object: nil) //Notifying FavouritesVC
         NotificationCenter.default.post(name: Constants.SEARCH_VC_RELOAD_TABLEVIEW_NOTIFICATION, object: nil) //Notifying SearchVC
     }
 
