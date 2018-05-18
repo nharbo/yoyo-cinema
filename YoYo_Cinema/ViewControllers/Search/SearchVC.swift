@@ -8,7 +8,6 @@
 
 import UIKit
 import SWRevealViewController
-import ZOZolaZoomTransition
 
 class SearchVC: UIViewController {
     
@@ -47,15 +46,11 @@ class SearchVC: UIViewController {
         
         //Observers
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadTableView), name: Constants.SEARCH_VC_RELOAD_TABLEVIEW_NOTIFICATION, object: nil)
-        
-//        //Transition setup
-//        self.navigationController?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Get latest search results, if any
-        print("viewWillAppear")
         if let latestSearchResult = controller.getLastSearchResults() {
             self.movies = latestSearchResult
             self.tableView.reloadData()
@@ -69,8 +64,10 @@ class SearchVC: UIViewController {
     //MARK: - Segue handeling
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "searchToDetails"{
-            let vc = segue.destination as! MovieDetailsVC
-            vc.movie = self.movies[sender as! Int]
+            if let indexPath = sender as? IndexPath {
+                let vc = segue.destination as! MovieDetailsVC
+                vc.movie = self.movies[indexPath.row]
+            }
         }
     }
     
@@ -91,12 +88,10 @@ class SearchVC: UIViewController {
 extension SearchVC: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //Show spinner
         self.showSpinner = true
-        self.tableView.reloadData()
-        //Dismiss keyboard
-        self.view.endEditing(true)
-        //Search for keyword
+        self.tableView.reloadData() //Reload to show spinner
+        self.view.endEditing(true) //Dismiss keyboard while searching
+
         self.controller.getMoviesFromSearch(query: searchBar.text!) { (response) in
             if response.success {
                 if let movies = response.movies {
@@ -130,7 +125,6 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             return movies.count
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -158,11 +152,11 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UIScreen.main.bounds.height / 1.4
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "searchToDetails", sender: indexPath.row)
+        self.performSegue(withIdentifier: "searchToDetails", sender: indexPath)
     }
     
     func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -183,65 +177,6 @@ extension SearchVC: SWRevealViewControllerDelegate {
     
 }
 
-////MARK: - UINavigationController Delegates
-//extension SearchVC: UINavigationControllerDelegate {
-//
-//    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//
-//        let type = (fromVC == self) ? ZOTransitionType.presenting : ZOTransitionType.dismissing;
-//
-//        //get selected cell
-//        let cell = self.tableView.cellForRow(at: self.tableView.indexPathForSelectedRow!) as! MovieTableViewCell;
-//
-//        let zoomTransition = ZOZolaZoomTransition(from: cell.movieImageView, type: type, duration: 0.5, delegate: self);
-//        return zoomTransition;
-//    }
-//
-//
-//}
-//
-//// MARK: ZOZolaZoomTransitionDelegate
-//extension SearchVC : ZOZolaZoomTransitionDelegate{
-//    func zolaZoomTransition(_ zoomTransition: ZOZolaZoomTransition!, startingFrameFor targetView: UIView!, relativeTo relativeView: UIView!, from fromViewController: UIViewController!, to toViewController: UIViewController!) -> CGRect {
-//
-//
-//
-//        if let cell = self.tableView.cellForRow(at: self.tableView.indexPathForSelectedRow!) as? MovieTableViewCell {
-//
-//            if (fromViewController == self){
-//
-//                return (cell.movieImageView.convert((cell.movieImageView?.bounds)!, to: relativeView))
-//
-//            } else if (fromViewController.isKind(of: MovieDetailsVC.self)) {
-//
-//                let  movieDetailsVC = fromViewController as! MovieDetailsVC;
-//
-//                return movieDetailsVC.backgroundImageView.convert(movieDetailsVC.backgroundImageView.bounds, to: relativeView);
-//            }
-//
-//        }
-//
-//        return CGRect.zero;
-//    }
-//
-//    func zolaZoomTransition(_ zoomTransition: ZOZolaZoomTransition!, finishingFrameFor targetView: UIView!, relativeTo relativeView: UIView!, from fromViewComtroller: UIViewController!, to toViewController: UIViewController!) -> CGRect {
-//
-//        let cell = self.tableView.cellForRow(at: self.tableView.indexPathForSelectedRow!) as! MovieTableViewCell;
-//        if (fromViewComtroller == self){
-//
-//            let  movieDetailsVC = toViewController as! MovieDetailsVC
-//
-//            return movieDetailsVC.backgroundImageView.convert(movieDetailsVC.backgroundImageView.bounds, to: relativeView);
-//
-//        } else if (fromViewComtroller.isKind(of: MovieDetailsVC.self)) {
-//
-//            return (cell.imageView?.convert((cell.imageView?.bounds)!, to: relativeView))!;
-//
-//        }
-//
-//        return CGRect.zero;
-//    }
-//}
 
 
 

@@ -9,7 +9,6 @@ target 'YoYo_Cinema' do
   
   #UI
   pod 'SWRevealViewController'
-  pod 'ZOZolaZoomTransition'
   
   #Utils
   pod 'Alamofire'

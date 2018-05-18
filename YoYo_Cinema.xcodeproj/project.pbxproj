@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A80DBCFF20ADA6760059E740 /* FavouritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80DBCFE20ADA6760059E740 /* FavouritesController.swift */; };
 		A80DBD0120ADBDF60059E740 /* FavouriteMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80DBD0020ADBDF60059E740 /* FavouriteMovieTableViewCell.swift */; };
+		A80DBD0320AECFB60059E740 /* ZoomTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80DBD0220AECFB60059E740 /* ZoomTransitionAnimator.swift */; };
+		A811C4D720AF500D00FA941F /* NoFavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A811C4D620AF500D00FA941F /* NoFavouritesTableViewCell.swift */; };
 		A8E066B720AB305F002F0965 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066B620AB305F002F0965 /* AppDelegate.swift */; };
 		A8E066B920AB305F002F0965 /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E066B820AB305F002F0965 /* LaunchVC.swift */; };
 		A8E066BC20AB305F002F0965 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8E066BA20AB305F002F0965 /* Main.storyboard */; };
@@ -62,6 +64,8 @@
 		771108844FC7D71018A671FF /* Pods_YoYo_CinemaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoYo_CinemaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A80DBCFE20ADA6760059E740 /* FavouritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesController.swift; sourceTree = "<group>"; };
 		A80DBD0020ADBDF60059E740 /* FavouriteMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMovieTableViewCell.swift; sourceTree = "<group>"; };
+		A80DBD0220AECFB60059E740 /* ZoomTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransitionAnimator.swift; sourceTree = "<group>"; };
+		A811C4D620AF500D00FA941F /* NoFavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavouritesTableViewCell.swift; sourceTree = "<group>"; };
 		A8E066B320AB305F002F0965 /* YoYo_Cinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoYo_Cinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8E066B620AB305F002F0965 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8E066B820AB305F002F0965 /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				A8E0671420ACC3C4002F0965 /* Constants.swift */,
+				A80DBD0220AECFB60059E740 /* ZoomTransitionAnimator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 			children = (
 				A8E066FC20AB45B6002F0965 /* FavouritesVC.swift */,
 				A80DBD0020ADBDF60059E740 /* FavouriteMovieTableViewCell.swift */,
+				A811C4D620AF500D00FA941F /* NoFavouritesTableViewCell.swift */,
 			);
 			path = Favourites;
 			sourceTree = "<group>";
@@ -482,7 +488,6 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Whisper/Whisper.framework",
-				"${BUILT_PRODUCTS_DIR}/ZOZolaZoomTransition/ZOZolaZoomTransition.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -492,7 +497,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Whisper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZOZolaZoomTransition.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -531,10 +535,12 @@
 				A8E066F920AB3CE9002F0965 /* MenuFavouritesTableViewCell.swift in Sources */,
 				A8E066F220AB36BC002F0965 /* SearchVC.swift in Sources */,
 				A8E0670120AB4C00002F0965 /* MovieTableViewCell.swift in Sources */,
+				A80DBD0320AECFB60059E740 /* ZoomTransitionAnimator.swift in Sources */,
 				A8E066B920AB305F002F0965 /* LaunchVC.swift in Sources */,
 				A8E0670320AB5633002F0965 /* Movie.swift in Sources */,
 				A8E066F520AB3AFD002F0965 /* MenuTableViewController.swift in Sources */,
 				A8E0670D20AC5975002F0965 /* DetailsController.swift in Sources */,
+				A811C4D720AF500D00FA941F /* NoFavouritesTableViewCell.swift in Sources */,
 				A8E0670720AB5832002F0965 /* SearchController.swift in Sources */,
 				A8E0671320AC720A002F0965 /* Genre.swift in Sources */,
 				A8E0671720ACC4FB002F0965 /* RealmManager.swift in Sources */,
@@ -728,10 +734,7 @@
 					"ZO_APP_EXTENSIONS=1",
 				);
 				INFOPLIST_FILE = YoYo_Cinema/Configs/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-Cinema";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -752,10 +755,7 @@
 					"ZO_APP_EXTENSIONS=1",
 				);
 				INFOPLIST_FILE = YoYo_Cinema/Configs/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-Cinema";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -770,11 +770,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YoYo_CinemaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -790,11 +786,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YoYo_CinemaTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -809,11 +801,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YoYo_CinemaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -828,11 +816,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = YoYo_CinemaUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "nicoware.YoYo-CinemaUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

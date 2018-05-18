@@ -11,7 +11,7 @@ import Alamofire
 
 class GetDetailsIntegration {
     
-    //Make class a singleton - we only need 1 instance
+    //Singleton - we only need 1 instance
     static let sharedInstance = GetDetailsIntegration()
     private init() { }
     

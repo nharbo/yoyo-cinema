@@ -31,10 +31,15 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var isFavouriteLabel: UILabel!
+    @IBOutlet weak var tintView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        tintView.layer.cornerRadius = 16.0
+        tintView.clipsToBounds = true
+        movieImageView.layer.cornerRadius = 16.0
+        movieImageView.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -50,19 +55,19 @@ class MovieTableViewCell: UITableViewCell {
             self.movieImageView.sd_setImage(with: url) { (image, error, cacheType, url) in
             }
         } else {
-            //TODO: Set placeholder
-        }
-        if let title = movie?.title {
-            self.movieTitle.text = title
-        } else {
-            self.movieTitle.text = "N/A"
+            //Only set title, if no image
+            if let title = movie?.title {
+                self.movieTitle.text = title
+            } else {
+                self.movieTitle.text = "N/A"
+            }
         }
     }
     
     //Prevents reuse of images and text
     func resetCell() {
         self.movieImageView.image = nil
-        self.movieTitle.text = ""
+        self.isFavouriteLabel.text = ""
     }
 
 }

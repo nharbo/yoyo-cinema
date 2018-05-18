@@ -17,13 +17,8 @@ class RealmManager {
     //MARK: - Constants
     let realm = try! Realm()
     
-    func isFavourite(movie: Movie) -> Bool {
-        if (realm.object(ofType: RealmMovie.self, forPrimaryKey: movie.id!) != nil) {
-            return true
-        }
-        return false
-    }
     
+    //MARK: - Create
     func addFavourite(movie: Movie, callback: (_ success: Bool) -> Void) {
         let realmMovie = RealmMovie()
         realmMovie.id = movie.id!
@@ -51,15 +46,12 @@ class RealmManager {
         }
     }
     
-    func removeFavourite(movie: Movie, callback: (_ success: Bool) -> Void) {
-        if let movieToRemove = realm.object(ofType: RealmMovie.self, forPrimaryKey: movie.id!) {
-            try! realm.write {
-                realm.delete(movieToRemove)
-                callback(true)
-            }
-        } else {
-            callback(false)
+    //MARK: - Read
+    func isFavourite(movie: Movie) -> Bool {
+        if (realm.object(ofType: RealmMovie.self, forPrimaryKey: movie.id!) != nil) {
+            return true
         }
+        return false
     }
     
     func getFavourites(callback: (_ movies: [Movie]) -> Void) {
@@ -87,6 +79,22 @@ class RealmManager {
         }
         callback(arr)
     }
+    
+    //MARK: - Update
+    
+    //MARK: - Delete
+    func removeFavourite(movie: Movie, callback: (_ success: Bool) -> Void) {
+        if let movieToRemove = realm.object(ofType: RealmMovie.self, forPrimaryKey: movie.id!) {
+            try! realm.write {
+                realm.delete(movieToRemove)
+                callback(true)
+            }
+        } else {
+            callback(false)
+        }
+    }
+    
+    
     
     
 }

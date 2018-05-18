@@ -10,7 +10,6 @@ PODS:
   - SDWebImage/Core (4.3.3)
   - SWRevealViewController (2.3.0)
   - Whisper (6.0.2)
-  - ZOZolaZoomTransition (1.0.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -18,7 +17,6 @@ DEPENDENCIES:
   - SDWebImage
   - SWRevealViewController
   - Whisper
-  - ZOZolaZoomTransition
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -28,7 +26,6 @@ SPEC REPOS:
     - SDWebImage
     - SWRevealViewController
     - Whisper
-    - ZOZolaZoomTransition
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
@@ -37,8 +34,7 @@ SPEC CHECKSUMS:
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   Whisper: 169760fc4bab0abf24d5529f9276f95c25cf1025
-  ZOZolaZoomTransition: 529a1bee39aef91bf425c2ab423743163d0c6d9b
 
-PODFILE CHECKSUM: e13570f6d182990edcb8328cf3c0ef898124a008
+PODFILE CHECKSUM: fbee99a6545b8e3f2178913938ab4732b815c8c4
 
 COCOAPODS: 1.5.0

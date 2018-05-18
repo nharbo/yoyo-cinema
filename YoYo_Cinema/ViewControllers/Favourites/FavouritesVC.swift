@@ -68,15 +68,26 @@ extension FavouritesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favouriteMovies.count
+        if favouriteMovies.isEmpty {
+            return 1
+        } else {
+            return favouriteMovies.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteMovieTableViewCell", for: indexPath) as! FavouriteMovieTableViewCell
-        cell.movie = self.favouriteMovies[indexPath.row]
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
-        cell.delegate = self
-        return cell
+        if favouriteMovies.isEmpty {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NoFavouritesTableViewCell", for: indexPath) as! NoFavouritesTableViewCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteMovieTableViewCell", for: indexPath) as! FavouriteMovieTableViewCell
+            cell.movie = self.favouriteMovies[indexPath.row]
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.delegate = self
+            return cell
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {

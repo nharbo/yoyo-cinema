@@ -8,7 +8,6 @@
 
 import UIKit
 import SDWebImage
-import ZOZolaZoomTransition
 
 class MovieDetailsVC: UIViewController {
     
@@ -21,6 +20,7 @@ class MovieDetailsVC: UIViewController {
     
     //MARK: - IBOutlets
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var taglineLabel: UILabel!
@@ -68,7 +68,12 @@ class MovieDetailsVC: UIViewController {
             self.favouriteButton.setTitle("ADD TO FAVOURITES", for: .normal)
         }
         
+        //Set info
         self.title = movie?.title!
+        
+        if let title = movie?.title {
+            self.titleLabel.text = title
+        }
         
         if let imageUrl = movie?.poster_path {
             let url = URL(string: imageUrl)

@@ -45,6 +45,7 @@ class MenuTableViewController: UITableViewController {
 
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "logoCell", for: indexPath) as UITableViewCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
             return cell
         }
 		if indexPath.row == 1 {
@@ -61,7 +62,7 @@ class MenuTableViewController: UITableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 50
+        return UITableViewAutomaticDimension
 	}
 
 }

@@ -11,7 +11,7 @@ import Alamofire
 
 class SearchMoviesIntegration {
     
-    //Make class a singleton - we only need 1 instance
+    //singleton, as we only need 1 instance
     static let sharedInstance = SearchMoviesIntegration()
     private init() { }
     
@@ -53,7 +53,7 @@ class SearchMoviesIntegration {
     
     //MARK: Api calls (GET)
     
-    //Get movies from keywords. Atm. it only gets the first page (20 elements)
+    //Get movies from keywords. Atm. we only get the first page (20 elements)
     func getMoviesFromSearch(query: String, callback: @escaping (CallStatus) -> Void){
         
         let queryUrlFriendly = query.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
@@ -91,6 +91,7 @@ class SearchMoviesIntegration {
                 }
                 
                 self.latestSearchResults = movieArray
+                
                 let response = CallStatus(success: true, movies: movieArray, error: nil)
                 callback(response)
         }
